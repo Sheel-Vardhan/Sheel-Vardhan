@@ -1,0 +1,15 @@
+name = "Sheel Vardhan"
+age = 22
+course = "BE CSE"
+college = "CMRIT"
+email = "shva22cs@cmrit.ac.in"
+
+print("╔════════════════════════════════════╗")
+print("║          STUDENT BIO CARD          ║")
+print("╠════════════════════════════════════╣")
+print(f"║ Name    : {name:<23}║")
+print(f"║ Age     : {str(age) + ' years':<23}║")
+print(f"║ Course  : {course:<23}║")
+print(f"║ College : {college:<23}║")
+print(f"║ Email   : {email:<23}║")
+print("╚════════════════════════════════════╝")

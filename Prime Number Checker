@@ -1,0 +1,50 @@
+print("=== PRIME NUMBER CHECKER ===")
+
+# ----- Single Number Check -----
+try:
+    num = int(input("Enter a number: "))
+except ValueError:
+    print("Invalid input! Please enter an integer.")
+    exit()
+
+if num <= 1:
+    print(f"{num} is NOT a prime number.")
+else:
+    is_prime = True
+
+    for i in range(2, int(num ** 0.5) + 1):
+        if num % i == 0:
+            is_prime = False
+            break
+
+    if is_prime:
+        print(f"{num} is a PRIME number.")
+    else:
+        print(f"{num} is NOT a prime number.")
+
+
+# ----- Prime Numbers in Range -----
+print("\n=== PRIME NUMBERS IN RANGE ===")
+
+try:
+    start = int(input("Enter start range: "))
+    end = int(input("Enter end range: "))
+except ValueError:
+    print("Invalid input! Please enter integers.")
+    exit()
+
+if start > end:
+    print("Start range should be less than or equal to end range.")
+    exit()
+
+print("Prime numbers in range:")
+
+for n in range(start, end + 1):
+    if n > 1:
+        for i in range(2, int(n ** 0.5) + 1):
+            if n % i == 0:
+                break
+        else:
+            print(n, end=" ")
+
+print()  # For clean newline

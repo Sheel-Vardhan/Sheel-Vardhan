@@ -1,0 +1,43 @@
+import random
+
+print("=== NUMBER GUESSING GAME ===")
+
+while True:
+    number = random.randint(1, 100)
+    attempts = 7
+    guessed = False
+
+    print("\nGuess the number between 1 and 100")
+    print("You have 7 attempts!")
+
+    while attempts > 0:
+        try:
+            guess = int(input("Enter guess: "))
+        except ValueError:
+            print("Invalid input! Please enter an integer.")
+            continue
+
+        if guess < 1 or guess > 100:
+            print("Please enter a number between 1 and 100.")
+            continue
+
+        attempts -= 1
+
+        if guess == number:
+            print("🎉 Correct! You guessed it.")
+            guessed = True
+            break
+        elif guess > number:
+            print("Too high!")
+        else:
+            print("Too low!")
+
+        print("Attempts left:", attempts)
+
+    if not guessed:
+        print("❌ You failed. The number was:", number)
+
+    play_again = input("\nPlay again? (yes/no): ").strip().lower()
+    if play_again != "yes":
+        print("Thanks for playing! 👋")
+        break

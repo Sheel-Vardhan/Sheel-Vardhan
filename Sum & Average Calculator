@@ -1,0 +1,33 @@
+print("=== NUMBER STATISTICS PROGRAM ===")
+
+try:
+    count = int(input("How many numbers? "))
+    
+    if count <= 0:
+        print("Please enter a number greater than 0.")
+        exit()
+
+except ValueError:
+    print("Invalid input! Please enter an integer.")
+    exit()
+
+numbers = []
+
+for i in range(count):
+    try:
+        num = float(input(f"Enter number {i+1}: "))
+        numbers.append(num)
+    except ValueError:
+        print("Invalid input! Please enter numeric values only.")
+        exit()
+
+total = sum(numbers)
+average = total / count
+maximum = max(numbers)
+minimum = min(numbers)
+
+print("\n=== RESULTS ===")
+print(f"Sum: {total}")
+print(f"Average: {average}")
+print(f"Maximum: {maximum}")
+print(f"Minimum: {minimum}")
